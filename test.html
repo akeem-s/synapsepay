@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Title</title>
+    <style>
+      body{
+        background-color:#ccc;
+      }
+
+       /*#chatWrapper .header,
+       #chatWrapper .footer,
+       #chatWrapper .content {
+          position:absolute;
+       }*/
+    </style>
+  </head>
+  <body>
+    <div id="chatWrapper">
+      <div id="chatroot">
+      </div>
+    </div>
+		<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+		<script type="text/javascript">
+		  var userip;
+		  document.cookie = "ip="+userip;
+		</script>
+    <script src="/dist/bundle-prod.js"></script>
+  </body>
+</html>

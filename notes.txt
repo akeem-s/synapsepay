@@ -1,0 +1,43 @@
+single page
+
+TODO:
+css changes with switch statement to determine background at any given time
+an action for every background change
+
+Game Idea:
+
+Sprite Research:
+
+Containers:
+
+Components:
+  <Background />
+    background component will render the background for the game.
+  <CharacterOne />
+    character component will render the character the user will be controlling. Characters will have different
+    state objects that will endow them with different abilities
+  <CharacterTwo />
+    character component will render the character the user will be controlling. Characters will have different
+    state objects that will endow them with different abilities
+  <EnemyOne />
+    enemyOne component will render a class of enemy
+  <EnemyTwo />
+    ""
+  <EnemyThree />
+    ""
+
+Reducers:
+    backgroundReducer: {
+      backgroundName: "",
+      backgroundTransitionStyle: ""
+    }
+
+Actions:
+
+
+
+SCRAP PAPER:
+
+click on character
+action with character name
+if state has character name, background changes to game and other character's display changes to none
