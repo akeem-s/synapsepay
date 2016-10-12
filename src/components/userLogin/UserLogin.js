@@ -8,7 +8,7 @@ export class UserLogin extends React.Component{
 
    render(){
      return(
-       <div className="componentName" >
+       <div className="userLoginContainer" >
          <h1> componentName </h1>
        </div>
      )

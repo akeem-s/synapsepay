@@ -53,5 +53,10 @@ const noStore = mockStore({
         const wrapper = mount(<UserLogin store={noStore}/>);
         expect(wrapper.find(UserLogin)).to.have.length(1);
       })
+
+      it('userLoginContainer should render', () => {
+       const wrapper = mount(<UserLogin store={noStore}/>);
+       expect(wrapper.find('.userLoginContainer')).to.have.length(1)
+     })
    });
  });
