@@ -3,7 +3,7 @@ import {combineReducers} from 'redux';
 // import sampleContainerReducer from '../components/sampleContainer/sampleContainer.reducers.js';
 
 const rootReducer = combineReducers({
-  // sampleContainerReducer
+  
 })
 
 export default rootReducer;
