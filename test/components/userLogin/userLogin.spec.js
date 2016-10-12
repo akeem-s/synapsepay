@@ -28,7 +28,14 @@ const noStore = mockStore({
  describe('componentName', () => {
    describe('Actions', () => {
      describe('Sync Actions', () => {
-
+       it('createNewUser', () => {
+         const expectedAction = {
+           type: "CREATE_NEW_USER",
+           userName: "username",
+           password: "password"
+         }
+         expect(actions.userLoginActions.createNewUser("username", "password")).to.eql(expectedAction)
+         })
      })
      describe('Async Actions', () => {
 
