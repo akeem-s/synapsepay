@@ -7,10 +7,22 @@ export class UserData extends React.Component{
      super(props)
    }
 
+   filterBy(){
+     alert("Filter By")
+   }
+
    render(){
      return(
        <div className="userDataComponent" >
          <h1> UserData </h1>
+
+         <form className="dataFilterForm" >
+           <label>Filter By:</label>
+           <select name="filter" onChange={this.filterBy.bind(this)} >
+             <option value="mostRecent">option one</option>
+             <option value="messengerType">option two</option>
+           </select>
+         </form>
        </div>
      )
    }

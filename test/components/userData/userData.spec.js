@@ -59,5 +59,10 @@ const noStore = mockStore({
        const wrapper = mount(<UserData store={noStore}/>);
        expect(wrapper.find('.userDataComponent')).to.have.length(1)
       })
+
+      it('dataFilterForm should render', () => {
+        const wrapper = mount(<UserData store={noStore}/>);
+        expect(wrapper.find('.dataFilterForm')).to.have.length(1)
+      })
    });
  });
