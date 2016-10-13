@@ -8,7 +8,8 @@ import createLogger from 'redux-logger'
 import TestUtils from 'react-addons-test-utils'
 import nock from 'nock'
 import * as actions from '../../../src/actions/actions.js'
-import UserLogin from '../../../src/components/userLogin/UserLogin.js'
+import UserData from '../../../src/components/userData/UserData.js'
+import UserDataReducer from '../../../src/components/userData/userData.reducers.js'
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised')
@@ -21,13 +22,15 @@ const middlewares = [thunkMiddleware]
 const mockStore = configureMockStore(middlewares)
 
 const noStore = mockStore({
-  userLoginReducer:{
+  userDataReducer:{
   }
 })
 
  describe('componentName', () => {
    describe('Actions', () => {
-     
+     describe('Sync Actions', () => {
+
+     })
      describe('Async Actions', () => {
 
      })
@@ -40,27 +43,21 @@ const noStore = mockStore({
 
    describe('Reducers', () => {
      describe('reducerName', () => {
-      //  it('should return initial state', () => {
-      //    expect(reducers.reducerName(undefined, {})).to.eql({})
-      //  })
+       it('should return initial state', () => {
+         expect(UserDataReducer(undefined, {})).to.eql({})
+       })
      })
    })
 
    describe('Component Functionality', () => {
      it('it should render', () => {
-        const wrapper = mount(<UserLogin store={noStore}/>);
-        expect(wrapper.find(UserLogin)).to.have.length(1);
+        const wrapper = mount(<UserData store={noStore}/>);
+        expect(wrapper.find(UserData)).to.have.length(1);
       })
 
-     it('userLoginContainer should render', () => {
-       const wrapper = mount(<UserLogin store={noStore}/>);
-       expect(wrapper.find('.userLoginContainer')).to.have.length(1)
+     it('userDataComponent should render', () => {
+       const wrapper = mount(<UserData store={noStore}/>);
+       expect(wrapper.find('.userDataComponent')).to.have.length(1)
       })
-
-     it('userLoginForm should render', () => {
-       const wrapper = mount(<UserLogin store={noStore}/>);
-       expect(wrapper.find('.userLoginForm')).to.have.length(1)
-      })
-
    });
  });
