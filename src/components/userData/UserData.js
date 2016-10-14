@@ -7,8 +7,33 @@ export class UserData extends React.Component{
      super(props)
    }
 
-   filterBy(){
-     alert("Filter By")
+   filterBy(e){
+     let val = e.target.value
+
+     if(val == 'name'){
+       alert(e.target.value)
+     }
+     else if ('email') {
+       alert(e.target.value)
+     }
+     else if ('phoneNumber') {
+       alert(e.target.value)
+     }
+     else if ('messengerType') {
+       alert(e.target.value)
+     }
+     else if ('dateJoined') {
+       alert(e.target.value)
+     }
+     else if ('extraSecurity') {
+       alert(e.target.value)
+     }
+     else if ('isBusiness') {
+       alert(e.target.value)
+     }
+     else if ('permissionType') {
+       alert(e.target.value)
+     }
    }
 
    render(){
@@ -17,10 +42,16 @@ export class UserData extends React.Component{
          <h1> UserData </h1>
 
          <form className="dataFilterForm" >
-           <label>Filter By:</label>
+           <label>Filter By: </label>
            <select name="filter" onChange={this.filterBy.bind(this)} >
-             <option value="mostRecent">option one</option>
-             <option value="messengerType">option two</option>
+             <option value="name">name</option>
+             <option value="email">Email</option>
+             <option value="phoneNumber">Phone</option>
+             <option value="idStatus">ID Status</option>
+             <option value="dateJoined">Date Joined</option>
+             <option value="extraSecurity">Extra Security</option>
+             <option value="isBusiness">Is Business</option>
+             <option value="permissionType">Permission Type</option>
            </select>
          </form>
        </div>
