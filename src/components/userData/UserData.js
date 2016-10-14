@@ -13,28 +13,28 @@ export class UserData extends React.Component{
      let val = e.target.value
 
      if(val == 'name'){
-       dispatch(actions.userDataActions.filterByName)
+       dispatch(actions.userDataActions.filterByName())
      }
      else if ('email') {
-       dispatch(actions.userDataActions.filterByEmail)
+       dispatch(actions.userDataActions.filterByEmail())
      }
      else if ('phoneNumber') {
-       dispatch(actions.userDataActions.filterByPhone)
+       dispatch(actions.userDataActions.filterByPhone())
      }
      else if ('idStatus') {
-       dispatch(actions.userDataActions.filterById)
+       dispatch(actions.userDataActions.filterById())
      }
      else if ('dateJoined') {
-       dispatch(actions.userDataActions.filterByDateJoined)
+       dispatch(actions.userDataActions.filterByDateJoined())
      }
      else if ('extraSecurity') {
-       dispatch(actions.userDataActions.filterByExtraSecurityStatus)
+       dispatch(actions.userDataActions.filterByExtraSecurityStatus())
      }
      else if ('isBusiness') {
-       dispatch(actions.userDataActions.filterByBusinessStatus)
+       dispatch(actions.userDataActions.filterByBusinessStatus())
      }
      else if ('permissionType') {
-       dispatch(actions.userDataActions.filterByPermissionType)
+       dispatch(actions.userDataActions.filterByPermissionType())
      }
    }
 
