@@ -8,31 +8,33 @@ export class UserData extends React.Component{
    }
 
    filterBy(e){
+     const { dispatch, userDataReducer } = this.props
+
      let val = e.target.value
 
      if(val == 'name'){
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByName)
      }
      else if ('email') {
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByEmail)
      }
      else if ('phoneNumber') {
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByPhone)
      }
-     else if ('messengerType') {
-       alert(e.target.value)
+     else if ('idStatus') {
+       dispatch(actions.userDataActions.filterById)
      }
      else if ('dateJoined') {
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByDateJoined)
      }
      else if ('extraSecurity') {
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByExtraSecurityStatus)
      }
      else if ('isBusiness') {
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByBusinessStatus)
      }
      else if ('permissionType') {
-       alert(e.target.value)
+       dispatch(actions.userDataActions.filterByPermissionType)
      }
    }
 
