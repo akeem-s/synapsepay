@@ -1,0 +1,14 @@
+.userLoginContainer {
+  position: absolute;
+  display: block;
+  top: 8vw;
+  left: 1vw;
+  width: 30vw;
+  height: 100%;
+}
+
+.userLoginForm input {
+  display: block;
+  height: 20px;
+  width: 80%;
+}

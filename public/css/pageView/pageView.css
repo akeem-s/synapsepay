@@ -1,0 +1,15 @@
+header {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vw;
+  background-color: #149EB3;
+  color: white;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}

@@ -7,6 +7,7 @@ export default class PageView extends Component{
   render(){
     return(
       <div>
+        <header><h1>Akeem's Generic Front End Project</h1></header>
         <UserLogin />
         <UserData />
       </div>

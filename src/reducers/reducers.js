@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
-// import {openingScreenContainerReducer} from '../containers/openingScreenContainer/openingScreenContainer.reducers.js';
-// import sampleContainerReducer from '../components/sampleContainer/sampleContainer.reducers.js';
+import {userLoginReducer} from '../components/userLogin/userLogin.reducers.js';
+import {userDataReducer} from '../components/userData/userData.reducers.js';
 
 const rootReducer = combineReducers({
-  
+  userLoginReducer,
+  userDataReducer
 })
 
 export default rootReducer;

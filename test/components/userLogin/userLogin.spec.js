@@ -9,6 +9,7 @@ import TestUtils from 'react-addons-test-utils'
 import nock from 'nock'
 import * as actions from '../../../src/actions/actions.js'
 import UserLogin from '../../../src/components/userLogin/UserLogin.js'
+import UserLoginReducer from '../../../src/components/userLogin/userLogin.reducers.js'
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised')
@@ -27,7 +28,7 @@ const noStore = mockStore({
 
  describe('componentName', () => {
    describe('Actions', () => {
-     
+
      describe('Async Actions', () => {
 
      })
@@ -40,9 +41,9 @@ const noStore = mockStore({
 
    describe('Reducers', () => {
      describe('reducerName', () => {
-      //  it('should return initial state', () => {
-      //    expect(reducers.reducerName(undefined, {})).to.eql({})
-      //  })
+       it('should return initial state', () => {
+         expect((UserLoginReducer.undefined, {})).to.eql({})
+       })
      })
    })
 
