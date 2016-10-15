@@ -39,11 +39,28 @@ export class UserData extends React.Component{
    }
 
    render(){
+     let userArray = [];
+     let totalUsers = '';
+     let totalBusinesses = '';
+
+
      return(
        <div className="userDataComponent" >
-         <h1> UserData </h1>
+
+         <div className="userStats">
+           <tr>
+             <th>Total Users</th>
+             <th>Total Businesses</th>
+           </tr>
+           <tr>
+             <td>total users</td>
+             <td>total businesses</td>
+           </tr>
+         </div>
 
          <form className="dataFilterForm" >
+           <br/>
+           <br/>
            <label>Filter By: </label>
            <select name="filter" onChange={this.filterBy.bind(this)} >
              <option value="name">name</option>
@@ -56,6 +73,31 @@ export class UserData extends React.Component{
              <option value="permissionType">Permission Type</option>
            </select>
          </form>
+
+         <div className="userDataTable">
+           <table>
+             <tr className="tableHeaders">
+               <th>Name</th>
+               <th>Email</th>
+               <th>Phone</th>
+               <th>ID Status</th>
+               <th>Date Joined</th>
+               <th>Extra Security</th>
+               <th>Business?</th>
+               <th>Permission Type</th>
+             </tr>
+             <tr>
+               <td>Name</td>
+               <td>Email</td>
+               <td>Phone</td>
+               <td>ID Status</td>
+               <td>Date Joined</td>
+               <td>Extra Security</td>
+               <td>Business?</td>
+               <td>Permission Type</td>
+             </tr>
+           </table>
+         </div>
        </div>
      )
    }
