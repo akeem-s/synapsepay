@@ -20,20 +20,21 @@ export class UserLogin extends React.Component{
      dispatch(actions.userLoginActions.createUser(userLoginReducer.userName, userLoginReducer.userEmail, userLoginReducer.userPhone)).then((data) => {
        console.log(data)
      })
+     e.target.reset()
     }
 
     userNameChange(e){
-  		const {dispatch, userLoginReducer} = this.props
+  		const { dispatch } = this.props
   		dispatch(actions.userLoginActions.userNameChange(e.target.value))
   	}
 
     userEmailChange(e){
-      const {dispatch, userLoginReducer} = this.props
+      const { dispatch } = this.props
   		dispatch(actions.userLoginActions.userEmailChange(e.target.value))
     }
 
     userPhoneChange(e){
-      const {dispatch, userLoginReducer} = this.props
+      const { dispatch } = this.props
   		dispatch(actions.userLoginActions.userPhoneChange(e.target.value))
     }
 

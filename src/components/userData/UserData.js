@@ -104,10 +104,11 @@ export class UserData extends React.Component{
 }
 
 function mapStateToProps(state) {
-  const { userDataReducer } = state
+  const { userDataReducer, userLoginReducer } = state
 
   return {
-	  userDataReducer
+	  userDataReducer,
+    userLoginReducer
   }
 }
 
