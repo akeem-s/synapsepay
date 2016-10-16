@@ -42,6 +42,11 @@ export function userDataReducer(state = {}, action){
         filterType: "permissionType"
       })
 
+    case 'FILTER_BY_SCOPE':
+      return Object.assign({}, state, {
+        filterType: "scope"
+      })
+
       default: return state
   }
 }

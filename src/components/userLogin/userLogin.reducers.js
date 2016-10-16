@@ -1,6 +1,6 @@
 import * as actions from './userLogin.actions.js';
 
-export function userLoginReducer(state = {}, action){
+export function userLoginReducer(state = {userArray: []}, action){
   switch(action.type){
     case 'USER_NAME_CHANGE':
       return Object.assign({}, state, {
