@@ -37,27 +37,43 @@ export function filterByEmail(input){
   }
 }
 
-export function filterByPhone(){
+export function filterByPhone(input){
+  var sortedArray = []
+  sortedArray = _.sortBy(input, function(userArray) { return userArray.phone_numbers[0] })
+
   return{
-    type: FILTER_BY_PHONE
+    type: FILTER_BY_PHONE,
+    userArray: sortedArray
   }
 }
 
-export function filterByDateJoined(){
+export function filterByDateJoined(input){
+  var sortedArray = []
+  sortedArray = _.sortBy(input, function(userArray) { return userArray.extra.date_joined })
+
   return{
-    type: FILTER_BY_DATE_JOINED
+    type: FILTER_BY_DATE_JOINED,
+    userArray: sortedArray
   }
 }
 
-export function filterByBusinessStatus(){
+export function filterByBusinessStatus(input){
+  var sortedArray = []
+  sortedArray = _.sortBy(input, function(userArray) { return userArray.extra.is_business })
+
   return{
-    type: FILTER_BY_BUSINESS_STATUS
+    type: FILTER_BY_BUSINESS_STATUS,
+    userArray: sortedArray
   }
 }
 
-export function filterByPermissionType(){
+export function filterByPermissionType(input){
+  var sortedArray = []
+  sortedArray = _.sortBy(input, function(userArray) { return userArray.permission })
+
   return{
-    type: FILTER_BY_PERMISSION_TYPE
+    type: FILTER_BY_PERMISSION_TYPE,
+    userArray: sortedArray
   }
 }
 
