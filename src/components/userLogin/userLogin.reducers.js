@@ -16,12 +16,12 @@ export function userLoginReducer(state = {}, action){
 
     case 'USER_EMAIL_CHANGE':
       return Object.assign({}, state, {
-        userName: action.userEmail
+        userEmail: action.userEmail
       })
 
     case 'USER_PHONE_CHANGE':
       return Object.assign({}, state, {
-        userName: action.userPhone
+        userPhone: action.userPhone
       })
 
       default: return state
