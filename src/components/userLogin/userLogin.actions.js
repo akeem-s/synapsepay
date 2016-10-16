@@ -5,15 +5,7 @@ export const CREATE_USER_FORM_SUBMIT = 'CREATE_USER_FORM_SUBMIT'
 export const USER_NAME_CHANGE = 'USER_NAME_CHANGE'
 export const USER_EMAIL_CHANGE = 'USER_EMAIL_CHANGE'
 export const USER_PHONE_CHANGE = 'USER_PHONE_CHANGE'
-
-// export function formSubmit(name, phone, email){
-//   return{
-//     type: CREATE_USER_FORM_SUBMIT,
-//     name: name,
-//     phone: phone,
-//     email: email
-//   }
-// }
+export const SAVE_USERS_TO_STATE = 'SAVE_USERS_TO_STATE'
 
 export function userNameChange(input){
   return{
@@ -36,6 +28,13 @@ export function userPhoneChange(input){
   }
 }
 
+export function saveUsersToState(userArray){
+  return{
+    type: SAVE_USERS_TO_STATE,
+    userArray: userArray
+  }
+}
+
 export function createUser(name, email, phone){
   return function(dispatch){
     return new Promise(function(resolve, reject){
@@ -43,10 +42,6 @@ export function createUser(name, email, phone){
         "async": true,
         "crossDomain": true,
         headers: new Headers({
-          // "Content-Type": "application/json",
-          // "X-SP-GATEWAY": "id-f1b94439-fa16-49f2-8a4d-b67c7574a43c|secret-85f1b65e-74fa-4aee-8330-b2ccb2c54f9e",
-          // "X-SP-USER-IP": "24.5.43.201",
-          // "X-SP-USER": ""
           "content-type": "application/json",
           "x-sp-gateway": "id-f1b94439-fa16-49f2-8a4d-b67c7574a43c|secret-85f1b65e-74fa-4aee-8330-b2ccb2c54f9e",
           "x-sp-user-ip": "24.5.43.201",

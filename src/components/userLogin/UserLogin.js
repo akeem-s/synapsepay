@@ -9,7 +9,7 @@ export class UserLogin extends React.Component{
      const { dispatch, userLoginReducer } = this.props
 
      dispatch(actions.userLoginActions.getAllUsers()).then((data) => {
-       console.log(data)
+       dispatch(actions.userLoginActions.saveUsersToState(data.users))
      })
    }
 

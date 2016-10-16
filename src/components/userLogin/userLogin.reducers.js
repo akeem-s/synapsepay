@@ -2,13 +2,6 @@ import * as actions from './userLogin.actions.js';
 
 export function userLoginReducer(state = {}, action){
   switch(action.type){
-    // case 'CREATE_USER_FORM_SUBMIT':
-    //   return Object.assign({}, state, {
-    //     name: name,
-    //     phone: phone,
-    //     email: email
-    //   })
-
     case 'USER_NAME_CHANGE':
       return Object.assign({}, state, {
         userName: action.userName
@@ -22,6 +15,11 @@ export function userLoginReducer(state = {}, action){
     case 'USER_PHONE_CHANGE':
       return Object.assign({}, state, {
         userPhone: action.userPhone
+      })
+
+    case 'SAVE_USERS_TO_STATE':
+      return Object.assign({}, state, {
+        userArray: action.userArray
       })
 
       default: return state
