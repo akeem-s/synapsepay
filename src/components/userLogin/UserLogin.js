@@ -5,6 +5,12 @@ import * as actions from '../../actions/actions.js'
 export class UserLogin extends React.Component{
    constructor(props){
      super(props)
+
+     const { dispatch, userLoginReducer } = this.props
+
+     dispatch(actions.userLoginActions.getAllUsers()).then((data) => {
+       console.log(data)
+     })
    }
 
    handleSubmit(e){
