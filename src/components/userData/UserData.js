@@ -44,29 +44,17 @@ export class UserData extends React.Component{
 
    render(){
      const { userLoginReducer } = this.props
-     let totalUsers = this.props.userLoginReducer.userArray.length;
+     let totalUsers = this.props.userLoginReducer.userArray.length
      let htmlArray = [];
      let row = '';
      let testTable = []
      let testRow = ''
 
-    //  if(this.props.userLoginReducer.userArray.length > 0){
-    //    for(let i = 0; i < this.props.userLoginReducer.userArray.length; i ++){
-    //      row = <li key={i}> <h4>  {this.props.userLoginReducer.userArray[i].legal_names[0]}</h4> <h4> {this.props.userLoginReducer.userArray[i].logins[0].email} </h4> <h4> {this.props.userLoginReducer.userArray[i].logins[0].scope}</h4> <h4> {this.props.userLoginReducer.userArray[i]._links.self.href} </h4> <h4> {this.props.userLoginReducer.userArray[i].phone_numbers[0] }</h4> <h4> {this.props.userLoginReducer.userArray[i].doc_status.physical_doc}</h4> <h4> {this.props.userLoginReducer.userArray[i].doc_status.virtual_doc}</h4> <h4> {this.props.userLoginReducer.userArray[i].extra.date_joined}</h4> <h4> {this.props.userLoginReducer.userArray[i].extra.is_business}</h4> <h4> {this.props.userLoginReducer.userArray[i].permission}</h4> <h4> {this.props.userLoginReducer.userArray[i]._id}</h4> </li>
-    //      htmlArray.push(row)
-    //    }
-    //  }
-    //  else {
-    //    htmlArray = <li key={0}></li>
-    //  }
-
     if(this.props.userLoginReducer.userArray.length > 0){
       for(let i = 0; i < this.props.userLoginReducer.userArray.length; i ++){
-        row = <li key={i} className="row"> <h4 className="cell">  {this.props.userLoginReducer.userArray[i].legal_names[0]}</h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].logins[0].email} </h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].logins[0].scope}</h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].phone_numbers[0] }</h4>  <h4 className="cell"> {this.props.userLoginReducer.userArray[i].extra.date_joined}</h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].permission}</h4>  </li>
+        row = <li key={i} className="row"> <h4 className="cell">  {this.props.userLoginReducer.userArray[i].legal_names[0]}</h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].logins[0].email} </h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].extra.is_business}</h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].phone_numbers[0] }</h4>  <h4 className="cell"> {this.props.userLoginReducer.userArray[i].extra.date_joined}</h4> <h4 className="cell"> {this.props.userLoginReducer.userArray[i].permission}</h4>  </li>
         htmlArray.push(row)
       }
-
-
     }
     else {
       htmlArray = <li key={0}></li>
@@ -76,14 +64,8 @@ export class UserData extends React.Component{
        <div className="userDataComponent" >
 
          <div className="userStats">
-           <tr>
-             <th>Total Users</th>
-             <th>Total Businesses</th>
-           </tr>
-           <tr>
-             <td>total users</td>
-             <td>total businesses</td>
-           </tr>
+            <h1>Users</h1>
+             <h3>Total Users: {totalUsers}</h3>
          </div>
 
          <form className="dataFilterForm" >
@@ -104,7 +86,7 @@ export class UserData extends React.Component{
          </form>
 
          <ul className="userDataUl">
-           <li className="row"> <h4 className="cell" >Name</h4> <h4 className="cell">Email</h4> <h4 className="cell">Scope</h4>  <h4 className="cell">Phone</h4> <h4 className="cell">Date Joined</h4> <h4 className="cell">Business?</h4>   </li>
+           <li className="row"> <h4 className="cell" >Name</h4> <h4 className="cell">Email</h4> <h4 className="cell">Business</h4>  <h4 className="cell">Phone</h4> <h4 className="cell">Date Joined</h4> <h4 className="cell">Permission Type</h4>   </li>
            <br></br>
            {htmlArray}
          </ul>
