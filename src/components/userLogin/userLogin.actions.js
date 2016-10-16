@@ -1,3 +1,5 @@
+import _ from 'underscore';
+
 const CLIENT_ID_SECRET = "f1b94439-fa16-49f2-8a4d-b67c7574a43c|85f1b65e-74fa-4aee-8330-b2ccb2c54f9e"
 const IP_ADDRESS = "24.5.43.201"
 const X_SP_USER = "57ff87b786c2730e00d31cbc|2672593661"
@@ -6,7 +8,73 @@ export const USER_NAME_CHANGE = 'USER_NAME_CHANGE'
 export const USER_EMAIL_CHANGE = 'USER_EMAIL_CHANGE'
 export const USER_PHONE_CHANGE = 'USER_PHONE_CHANGE'
 export const SAVE_USERS_TO_STATE = 'SAVE_USERS_TO_STATE'
+export const FILTER_BY_NAME = 'FILTER_BY_NAME'
+export const FILTER_BY_EMAIL = 'FILTER_BY_EMAIL'
+export const FILTER_BY_PHONE = 'FILTER_BY_PHONE'
+export const FILTER_BY_ID = 'FILTER_BY_ID'
+export const FILTER_BY_DATE_JOINED = 'FILTER_BY_DATE_JOINED'
+export const FILTER_BY_EXTRA_SECURITY_STATUS = 'FILTER_BY_EXTRA_SECURITY_STATUS'
+export const FILTER_BY_BUSINESS_STATUS = 'FILTER_BY_BUSINESS_STATUS'
+export const FILTER_BY_PERMISSION_TYPE = 'FILTER_BY_PERMISSION_TYPE'
+export const FILTER_BY_SCOPE = 'FILTER_BY_SCOPE'
 
+export function filterByName(input){
+  // _.sortBy(arr, function(o) { return o.start.dateTime; })
+  var sortedArray = []
+  sortedArray = _.sortBy(input, function(userArray) { return userArray.legal_names })
+  return{
+    type: FILTER_BY_NAME,
+    userArray: sortedArray
+  }
+}
+
+export function filterByEmail(){
+  return{
+    type: FILTER_BY_EMAIL
+  }
+}
+
+export function filterByPhone(){
+  return{
+    type: FILTER_BY_PHONE
+  }
+}
+
+export function filterById(){
+  return{
+    type: FILTER_BY_ID
+  }
+}
+
+export function filterByDateJoined(){
+  return{
+    type: FILTER_BY_DATE_JOINED
+  }
+}
+
+export function filterByExtraSecurityStatus(){
+  return{
+    type: FILTER_BY_EXTRA_SECURITY_STATUS
+  }
+}
+
+export function filterByBusinessStatus(){
+  return{
+    type: FILTER_BY_BUSINESS_STATUS
+  }
+}
+
+export function filterByPermissionType(){
+  return{
+    type: FILTER_BY_PERMISSION_TYPE
+  }
+}
+
+export function filterByScope(){
+  return{
+    type: FILTER_BY_SCOPE
+  }
+}
 export function userNameChange(input){
   return{
     type: USER_NAME_CHANGE,

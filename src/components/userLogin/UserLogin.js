@@ -38,6 +38,35 @@ export class UserLogin extends React.Component{
   		dispatch(actions.userLoginActions.userPhoneChange(e.target.value))
     }
 
+    filterBy(e){
+      const { dispatch, userDataReducer, userLoginReducer } = this.props
+
+      let val = e.target.value
+
+      if(val == 'name'){
+        dispatch(actions.userLoginActions.filterByName(this.props.userLoginReducer.userArray))
+      }
+
+      else if (val == 'email') {
+        dispatch(actions.userLoginActions.filterByEmail(this.props.userLoginReducer.userArray))
+      }
+
+      else if (val == 'phoneNumber') {
+        dispatch(actions.userLoginActions.filterByPhone(this.props.userLoginReducer.userArray))
+      }
+
+      else if (val == 'dateJoined') {
+        dispatch(actions.userLoginActions.filterByDateJoined(this.props.userLoginReducer.userArray))
+      }
+
+      else if (val == 'isBusiness') {
+        dispatch(actions.userLoginActions.filterByBusinessStatus(this.props.userLoginReducer.userArray))
+      }
+      else if (val == 'permissionType') {
+        dispatch(actions.userLoginActions.filterByPermissionType(this.props.userLoginReducer.userArray))
+      }
+    }
+
    render(){
      return(
        <div className="userLoginContainer" >
@@ -52,7 +81,26 @@ export class UserLogin extends React.Component{
             <br/>
             <input type="submit" onSubmit={this.handleSubmit.bind(this)}/>
           </form>
+
+          <form className="dataFilterForm" >
+            <br/>
+            <br/>
+            <label>Filter By: </label>
+            <select name="filter" onChange={this.filterBy.bind(this)} >
+              <option value="name">name</option>
+              <option value="email">Email</option>
+              <option value="email">Scope</option>
+              <option value="phoneNumber">Phone</option>
+              <option value="idStatus">ID Status</option>
+              <option value="dateJoined">Date Joined</option>
+              <option value="extraSecurity">Extra Security</option>
+              <option value="isBusiness">Is Business</option>
+              <option value="permissionType">Permission Type</option>
+            </select>
+          </form>
        </div>
+
+
      )
    }
 }
