@@ -6,6 +6,7 @@ export const FILTER_BY_DATE_JOINED = 'FILTER_BY_DATE_JOINED'
 export const FILTER_BY_EXTRA_SECURITY_STATUS = 'FILTER_BY_EXTRA_SECURITY_STATUS'
 export const FILTER_BY_BUSINESS_STATUS = 'FILTER_BY_BUSINESS_STATUS'
 export const FILTER_BY_PERMISSION_TYPE = 'FILTER_BY_PERMISSION_TYPE'
+export const FILTER_BY_SCOPE = 'FILTER_BY_SCOPE'
 
 export function filterByName(){
   return{
@@ -52,5 +53,11 @@ export function filterByBusinessStatus(){
 export function filterByPermissionType(){
   return{
     type: FILTER_BY_PERMISSION_TYPE
+  }
+}
+
+export function filterByScope(){
+  return{
+    type: FILTER_BY_SCOPE
   }
 }

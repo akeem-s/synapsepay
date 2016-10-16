@@ -15,34 +15,55 @@ export class UserData extends React.Component{
      if(val == 'name'){
        dispatch(actions.userDataActions.filterByName())
      }
-     else if ('email') {
+     else if (val == 'email') {
        dispatch(actions.userDataActions.filterByEmail())
      }
-     else if ('phoneNumber') {
+     else if (val == 'phoneNumber') {
        dispatch(actions.userDataActions.filterByPhone())
      }
-     else if ('idStatus') {
+     else if (val == 'idStatus') {
        dispatch(actions.userDataActions.filterById())
      }
-     else if ('dateJoined') {
+     else if (val == 'dateJoined') {
        dispatch(actions.userDataActions.filterByDateJoined())
      }
-     else if ('extraSecurity') {
+     else if (val == 'extraSecurity') {
        dispatch(actions.userDataActions.filterByExtraSecurityStatus())
      }
-     else if ('isBusiness') {
+     else if (val == 'isBusiness') {
        dispatch(actions.userDataActions.filterByBusinessStatus())
      }
-     else if ('permissionType') {
+     else if (val == 'permissionType') {
        dispatch(actions.userDataActions.filterByPermissionType())
+     }
+
+     else if(val == 'scope'){
+       dispatch(actions.userDataActions.filterByScope())
      }
    }
 
    render(){
+     const { userLoginReducer } = this.props
+
      let userArray = [];
      let totalUsers = '';
      let totalBusinesses = '';
 
+     if(this.props.userLoginReducer.userArray.length > 0){
+       for(let i = 0; i < this.props.userLoginReducer.userArray.length; i ++){
+         <tr>
+           <td> this.props.userLoginReducer.userArray[i].legal_names[0]</td>
+           <td> this.props.userLoginReducer.userArray[i].logins[0].email</td>
+           <td> this.props.userLoginReducer.userArray[i].logins[0].scope</td>
+           <td> this.props.userLoginReducer.userArray[i]._links.self.href</td>
+           <td> this.props.userLoginReducer.userArray[i].doc_status.physical_doc</td>
+           <td> this.props.userLoginReducer.userArray[i].doc_status.virtual_doc</td>
+           <td> this.props.userLoginReducer.userArray[i].extra.date_joined</td>
+           <td> this.props.userLoginReducer.userArray[i].</td>
+           <td> this.props.userLoginReducer.userArray[i]._id</td>
+         </tr>
+       }
+     }
 
      return(
        <div className="userDataComponent" >
@@ -65,6 +86,7 @@ export class UserData extends React.Component{
            <select name="filter" onChange={this.filterBy.bind(this)} >
              <option value="name">name</option>
              <option value="email">Email</option>
+             <option value="email">Scope</option>
              <option value="phoneNumber">Phone</option>
              <option value="idStatus">ID Status</option>
              <option value="dateJoined">Date Joined</option>
@@ -79,6 +101,7 @@ export class UserData extends React.Component{
              <tr className="tableHeaders">
                <th>Name</th>
                <th>Email</th>
+               <th>Scope</th>
                <th>Phone</th>
                <th>ID Status</th>
                <th>Date Joined</th>
@@ -86,16 +109,9 @@ export class UserData extends React.Component{
                <th>Business?</th>
                <th>Permission Type</th>
              </tr>
-             <tr>
-               <td>Name</td>
-               <td>Email</td>
-               <td>Phone</td>
-               <td>ID Status</td>
-               <td>Date Joined</td>
-               <td>Extra Security</td>
-               <td>Business?</td>
-               <td>Permission Type</td>
-             </tr>
+
+
+
            </table>
          </div>
        </div>
@@ -104,10 +120,11 @@ export class UserData extends React.Component{
 }
 
 function mapStateToProps(state) {
-  const { userDataReducer } = state
+  const { userDataReducer, userLoginReducer } = state
 
   return {
-	  userDataReducer
+	  userDataReducer,
+    userLoginReducer
   }
 }
 
