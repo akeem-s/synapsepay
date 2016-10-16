@@ -10,42 +10,32 @@ export function userLoginReducer(state = {userArray: []}, action){
 
     case 'FILTER_BY_EMAIL':
       return Object.assign({}, state, {
-        filterType: "email"
+        filterType: "email",
+        userArray: action.userArray
       })
 
     case 'FILTER_BY_PHONE':
       return Object.assign({}, state, {
-        filterType: "phone"
-      })
-
-    case 'FILTER_BY_ID':
-      return Object.assign({}, state, {
-        filterType: "id"
+        filterType: "phone",
+        userArray: action.userArray
       })
 
     case 'FILTER_BY_DATE_JOINED':
       return Object.assign({}, state, {
-        filterType: "dateJoined"
-      })
-
-    case 'FILTER_BY_EXTRA_SECURITY_STATUS':
-      return Object.assign({}, state, {
-        filterType: "securityStatus"
+        filterType: "dateJoined",
+        userArray: action.userArray
       })
 
     case 'FILTER_BY_BUSINESS_STATUS':
       return Object.assign({}, state, {
-        filterType: "businessStatus"
+        filterType: "businessStatus",
+        userArray: action.userArray
       })
 
     case 'FILTER_BY_PERMISSION_TYPE':
       return Object.assign({}, state, {
-        filterType: "permissionType"
-      })
-
-    case 'FILTER_BY_SCOPE':
-      return Object.assign({}, state, {
-        filterType: "scope"
+        filterType: "permissionType",
+        userArray: action.userArray
       })
 
     case 'USER_NAME_CHANGE':

@@ -89,18 +89,13 @@ export class UserLogin extends React.Component{
             <select name="filter" onChange={this.filterBy.bind(this)} >
               <option value="name">name</option>
               <option value="email">Email</option>
-              <option value="email">Scope</option>
-              <option value="phoneNumber">Phone</option>
-              <option value="idStatus">ID Status</option>
-              <option value="dateJoined">Date Joined</option>
-              <option value="extraSecurity">Extra Security</option>
               <option value="isBusiness">Is Business</option>
+              <option value="phoneNumber">Phone</option>
+              <option value="dateJoined">Date Joined</option>
               <option value="permissionType">Permission Type</option>
             </select>
           </form>
        </div>
-
-
      )
    }
 }

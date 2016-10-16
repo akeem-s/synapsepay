@@ -28,9 +28,12 @@ export function filterByName(input){
   }
 }
 
-export function filterByEmail(){
+export function filterByEmail(input){
+  var sortedArray = []
+  sortedArray = _.sortBy(input, function(userArray) { return userArray.logins[0].email })
   return{
-    type: FILTER_BY_EMAIL
+    type: FILTER_BY_EMAIL,
+    userArray: sortedArray
   }
 }
 
@@ -40,21 +43,9 @@ export function filterByPhone(){
   }
 }
 
-export function filterById(){
-  return{
-    type: FILTER_BY_ID
-  }
-}
-
 export function filterByDateJoined(){
   return{
     type: FILTER_BY_DATE_JOINED
-  }
-}
-
-export function filterByExtraSecurityStatus(){
-  return{
-    type: FILTER_BY_EXTRA_SECURITY_STATUS
   }
 }
 
@@ -70,11 +61,6 @@ export function filterByPermissionType(){
   }
 }
 
-export function filterByScope(){
-  return{
-    type: FILTER_BY_SCOPE
-  }
-}
 export function userNameChange(input){
   return{
     type: USER_NAME_CHANGE,
