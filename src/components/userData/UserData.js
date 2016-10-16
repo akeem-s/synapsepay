@@ -44,26 +44,29 @@ export class UserData extends React.Component{
 
    render(){
      const { userLoginReducer } = this.props
+     let totalUsers = this.props.userLoginReducer.userArray.length;
+     let htmlArray = [];
+     let row = '';
 
-     let userArray = [];
-     let totalUsers = '';
-     let totalBusinesses = '';
+    //  if(this.props.userLoginReducer.userArray.length > 0){
+    //    for(let i = 0; i < this.props.userLoginReducer.userArray.length; i ++){
+    //      row = <li key={i}> <h4>  {this.props.userLoginReducer.userArray[i].legal_names[0]}</h4> <h4> {this.props.userLoginReducer.userArray[i].logins[0].email} </h4> <h4> {this.props.userLoginReducer.userArray[i].logins[0].scope}</h4> <h4> {this.props.userLoginReducer.userArray[i]._links.self.href} </h4> <h4> {this.props.userLoginReducer.userArray[i].phone_numbers[0] }</h4> <h4> {this.props.userLoginReducer.userArray[i].doc_status.physical_doc}</h4> <h4> {this.props.userLoginReducer.userArray[i].doc_status.virtual_doc}</h4> <h4> {this.props.userLoginReducer.userArray[i].extra.date_joined}</h4> <h4> {this.props.userLoginReducer.userArray[i].extra.is_business}</h4> <h4> {this.props.userLoginReducer.userArray[i].permission}</h4> <h4> {this.props.userLoginReducer.userArray[i]._id}</h4> </li>
+    //      htmlArray.push(row)
+    //    }
+    //  }
+    //  else {
+    //    htmlArray = <li key={0}></li>
+    //  }
 
-     if(this.props.userLoginReducer.userArray.length > 0){
-       for(let i = 0; i < this.props.userLoginReducer.userArray.length; i ++){
-         <tr>
-           <td> this.props.userLoginReducer.userArray[i].legal_names[0]</td>
-           <td> this.props.userLoginReducer.userArray[i].logins[0].email</td>
-           <td> this.props.userLoginReducer.userArray[i].logins[0].scope</td>
-           <td> this.props.userLoginReducer.userArray[i]._links.self.href</td>
-           <td> this.props.userLoginReducer.userArray[i].doc_status.physical_doc</td>
-           <td> this.props.userLoginReducer.userArray[i].doc_status.virtual_doc</td>
-           <td> this.props.userLoginReducer.userArray[i].extra.date_joined</td>
-           <td> this.props.userLoginReducer.userArray[i].</td>
-           <td> this.props.userLoginReducer.userArray[i]._id</td>
-         </tr>
-       }
-     }
+    if(this.props.userLoginReducer.userArray.length > 0){
+      for(let i = 0; i < this.props.userLoginReducer.userArray.length; i ++){
+        row = <li key={i}> <h4>  {this.props.userLoginReducer.userArray[i].legal_names[0]}</h4> <h4> {this.props.userLoginReducer.userArray[i].logins[0].email} </h4> <h4> {this.props.userLoginReducer.userArray[i].logins[0].scope}</h4> <h4> {this.props.userLoginReducer.userArray[i]._links.self.href} </h4> <h4> {this.props.userLoginReducer.userArray[i].phone_numbers[0] }</h4> <h4> {this.props.userLoginReducer.userArray[i].doc_status.physical_doc}</h4> <h4> {this.props.userLoginReducer.userArray[i].doc_status.virtual_doc}</h4> <h4> {this.props.userLoginReducer.userArray[i].extra.date_joined}</h4> <h4> {this.props.userLoginReducer.userArray[i].extra.is_business}</h4> <h4> {this.props.userLoginReducer.userArray[i].permission}</h4> <h4> {this.props.userLoginReducer.userArray[i]._id}</h4> </li>
+        htmlArray.push(row)
+      }
+    }
+    else {
+      htmlArray = <li key={0}></li>
+    }
 
      return(
        <div className="userDataComponent" >
@@ -96,25 +99,12 @@ export class UserData extends React.Component{
            </select>
          </form>
 
-         <div className="userDataTable">
-           <table>
-             <tr className="tableHeaders">
-               <th>Name</th>
-               <th>Email</th>
-               <th>Scope</th>
-               <th>Phone</th>
-               <th>ID Status</th>
-               <th>Date Joined</th>
-               <th>Extra Security</th>
-               <th>Business?</th>
-               <th>Permission Type</th>
-             </tr>
+         <ul className="userDataUl">
+           <li> <h4>Name</h4> <h4>Email</h4> <h4>Scope</h4> <h4>Link</h4> <h4>Phone</h4> <h4>Physical Doc Status</h4> <h4>Virtual Doc Status</h4> <h4>ID Status</h4> <h4>Date Joined</h4> <h4>Extra Security</h4> <h4>Business?</h4> <h4>Permission Type</h4> <h4>ID</h4> </li>
+           {htmlArray}
+         </ul>
 
-
-
-           </table>
          </div>
-       </div>
      )
    }
 }

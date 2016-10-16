@@ -9,7 +9,6 @@ export class UserLogin extends React.Component{
      const { dispatch, userLoginReducer } = this.props
 
      dispatch(actions.userLoginActions.getAllUsers()).then((data) => {
-       debugger;
        dispatch(actions.userLoginActions.saveUsersToState(data.users))
      })
    }
