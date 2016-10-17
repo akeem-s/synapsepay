@@ -23,6 +23,7 @@ const mockStore = configureMockStore(middlewares)
 
 const noStore = mockStore({
   userLoginReducer:{
+    userArray: []
   }
 })
 
@@ -42,7 +43,7 @@ const noStore = mockStore({
    describe('Reducers', () => {
      describe('reducerName', () => {
        it('should return initial state', () => {
-         expect((UserLoginReducer.undefined, {})).to.eql({})
+         expect(UserLoginReducer(undefined, {})).to.eql({ userArray: [] })
        })
      })
    })
@@ -63,5 +64,9 @@ const noStore = mockStore({
        expect(wrapper.find('.userLoginForm')).to.have.length(1)
       })
 
+      it('dataFilterForm should render', () => {
+        const wrapper = mount(<UserLogin store={noStore}/>);
+        expect(wrapper.find('.dataFilterForm')).to.have.length(1)
+      })
    });
  });
