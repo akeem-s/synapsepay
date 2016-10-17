@@ -27,7 +27,7 @@ const noStoreUserData = mockStore({
   }
 })
 
- describe('componentName', () => {
+ describe('User Data', () => {
    describe('Actions', () => {
      describe('Sync Actions', () => {
 
@@ -51,14 +51,6 @@ const noStoreUserData = mockStore({
    })
 
    describe('Component Functionality', () => {
-     it('it should render', () => {
-        const wrapper = mount(<UserData store={noStoreUserData}/>);
-        expect(wrapper.find(UserData)).to.have.length(1);
-      })
-
-     it('userDataComponent should render', () => {
-       const wrapper = mount(<UserData store={noStoreUserData}/>);
-       expect(wrapper.find('.userDataComponent')).to.have.length(1)
-      })
+     
    });
  });
