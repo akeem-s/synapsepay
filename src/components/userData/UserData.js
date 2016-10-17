@@ -27,13 +27,10 @@ export class UserData extends React.Component{
 
      return(
        <div className="userDataComponent" >
-
          <div className="userStats">
             <h1>Users</h1>
              <h3>Total Users: {totalUsers}</h3>
          </div>
-
-
 
          <ul className="userDataUl">
            <li className="row"> <h4 className="cell" >Name</h4> <h4 className="cell">Email</h4> <h4 className="cell">Business</h4>  <h4 className="cell">Phone</h4> <h4 className="cell">Date Joined</h4> <h4 className="cell">Permission Type</h4>   </li>

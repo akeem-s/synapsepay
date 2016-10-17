@@ -10,6 +10,7 @@ import nock from 'nock'
 import * as actions from '../../../src/actions/actions.js'
 import UserData from '../../../src/components/userData/UserData.js'
 import UserDataReducer from '../../../src/components/userData/userData.reducers.js'
+import UserLoginReducer from '../../../src/components/userLogin/userLogin.reducers.js'
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised')
@@ -21,7 +22,7 @@ var expect = require('chai').expect;
 const middlewares = [thunkMiddleware]
 const mockStore = configureMockStore(middlewares)
 
-const noStore = mockStore({
+const noStoreUserData = mockStore({
   userDataReducer:{
   }
 })
@@ -42,7 +43,7 @@ const noStore = mockStore({
    })
 
    describe('Reducers', () => {
-     describe('reducerName', () => {
+     describe('UserData', () => {
        it('should return initial state', () => {
          expect(UserDataReducer(undefined, {})).to.eql({})
        })
@@ -51,18 +52,13 @@ const noStore = mockStore({
 
    describe('Component Functionality', () => {
      it('it should render', () => {
-        const wrapper = mount(<UserData store={noStore}/>);
+        const wrapper = mount(<UserData store={noStoreUserData}/>);
         expect(wrapper.find(UserData)).to.have.length(1);
       })
 
      it('userDataComponent should render', () => {
-       const wrapper = mount(<UserData store={noStore}/>);
+       const wrapper = mount(<UserData store={noStoreUserData}/>);
        expect(wrapper.find('.userDataComponent')).to.have.length(1)
-      })
-
-      it('dataFilterForm should render', () => {
-        const wrapper = mount(<UserData store={noStore}/>);
-        expect(wrapper.find('.dataFilterForm')).to.have.length(1)
       })
    });
  });

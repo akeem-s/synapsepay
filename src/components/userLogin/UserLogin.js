@@ -19,6 +19,9 @@ export class UserLogin extends React.Component{
 
      dispatch(actions.userLoginActions.createUser(userLoginReducer.userName, userLoginReducer.userEmail, userLoginReducer.userPhone)).then((data) => {
        console.log(data)
+       dispatch(actions.userLoginActions.getAllUsers()).then((response) => {
+         dispatch(actions.userLoginActions.saveUsersToState(response.users))
+       })
      })
      e.target.reset()
     }
@@ -77,9 +80,9 @@ export class UserLogin extends React.Component{
             <br/>
             <input className="email" type="text" name="email" placeholder="Email" onChange={this.userEmailChange.bind(this)}/>
             <br/>
-            <input className="phone" type="number" name="phone" placeholder="Phone" onChange={this.userPhoneChange.bind(this)}/>
+            <input className="phone" type="tel" name="phone" placeholder="Phone" onChange={this.userPhoneChange.bind(this)}/>
             <br/>
-            <input type="submit" onSubmit={this.handleSubmit.bind(this)}/>
+            <input type="submit" />
           </form>
 
           <form className="dataFilterForm" >
